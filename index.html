@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitalEdge</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header class="app-header">
+    <span>VitalEdge</span>
+    <span class="material-icons settings-btn" onclick="switchTab('settings')">settings</span>
+  </header>
+
+  <!-- Tabs -->
+  <main>
+    <section id="home" class="tab active">
+      <div class="card">
+        <h2>Tasks</h2>
+        <ul id="taskList"></ul>
+        <div class="input-row">
+          <input type="text" id="taskInput" placeholder="Add new task..." />
+          <button onclick="addTask()">+</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Calories</h2>
+        <canvas id="calorieChart" width="200" height="200"></canvas>
+        <p id="calorieText"></p>
+      </div>
+
+      <div class="card">
+        <h2>Protein</h2>
+        <canvas id="proteinChart" width="200" height="200"></canvas>
+        <p id="proteinText"></p>
+      </div>
+    </section>
+
+    <section id="tasks" class="tab">
+      <h2>All Tasks</h2>
+      <ul id="taskListFull"></ul>
+    </section>
+
+    <section id="calories" class="tab">
+      <h2>Log Meals</h2>
+      <div class="input-row">
+        <input type="number" id="mealCalories" placeholder="Calories" />
+        <input type="number" id="mealProtein" placeholder="Protein (g)" />
+        <button onclick="addMeal()">Add</button>
+      </div>
+      <ul id="mealList"></ul>
+    </section>
+
+    <section id="settings" class="tab">
+      <h2>Settings</h2>
+      <label>Daily Calorie Goal:
+        <input type="number" id="calorieGoal" value="2500" />
+      </label>
+      <label>Daily Protein Goal:
+        <input type="number" id="proteinGoal" value="150" />
+      </label>
+      <button class="save-btn" onclick="saveSettings()">Save</button>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="navbar">
+    <button onclick="switchTab('tasks')">
+      <span class="material-icons">checklist</span> Tasks
+    </button>
+    <button onclick="switchTab('home')" class="active">
+      <span class="material-icons">home</span> Home
+    </button>
+    <button onclick="switchTab('calories')">
+      <span class="material-icons">local_fire_department</span> Calories
+    </button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
