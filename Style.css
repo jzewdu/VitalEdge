@@ -1,0 +1,148 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f2f5f9;
+  color: #333;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-btn {
+  cursor: pointer;
+}
+
+.tab {
+  display: none;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+.tab.active {
+  display: block;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background: #00b09b;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #02876c;
+}
+
+.save-btn {
+  width: 100%;
+  margin-top: 15px;
+}
+
+#taskList li, #taskListFull li {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#taskList li:hover, #taskListFull li:hover {
+  background: #e6f7f4;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+}
+
+.navbar button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #555;
+}
+
+.navbar button.active {
+  color: #00b09b;
+}
+
+.navbar button .material-icons {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #eee;
+  }
+  .app-header {
+    background: linear-gradient(135deg, #434343, #000000);
+  }
+  .card {
+    background: #1e1e1e;
+  }
+  input {
+    background: #2a2a2a;
+    color: #eee;
+    border: 1px solid #444;
+  }
+  .navbar {
+    background: #1e1e1e;
+  }
+  .navbar button {
+    color: #bbb;
+  }
+  .navbar button.active {
+    color: #00b09b;
+  }
+}
